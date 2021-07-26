@@ -1,0 +1,26 @@
+This program, according to the command line input, has two input mode: 
+1)-i: Take an image input
+2)-m: Take a movie input
+If the input is an image, a filter will be applied to it iteratively. And then
+all the images produced by the iterative filter will be made into a movie. 
+If the input is a movie, it will be reversed by the ReverseImageList Function, 
+and then the reversed movie will be the output movie. 
+Functions: 
+Create/DeleteImageList: Allocate/Deallocate memory space for an image list using
+malloc/free function. 
+Create/DeleteImageEntry: Allocate/Deallocate memory space for an image entry
+using malloc/free function
+doIterativeFilter: It has five parameters: 1)Image, 2)Filter, 3)Start value, 
+4)End value, 5)Step value. The image parater accept an RGBImage as input, the 
+start/end/step values are given by the command line tools. It does not matter 
+if start>end or start<end. It can do either way. The filter is also feed in by
+command line tools. It will be applied to the image for n times, where n is 
+defined by the start/end/step values. 
+ReverseImageList: This function reverses the order of an input image list. It
+first check if the current entry is the first or the last entry in the list. If
+it is the first entry, it sets the Prev pointer pointing to the adress that the
+Next vector points to, and then sets the Prev pointer pointing to NULL. If it is
+the last entry, it first sets its Next pointer pointing to the adress that the
+Prev pointer points to, and then set the Prev pointer to NULL. If it is any 
+other entry, it reverses the Prev and Next Pointer. After it has gone through
+every single entry in the list, it reverses the First and Last pointer. 
